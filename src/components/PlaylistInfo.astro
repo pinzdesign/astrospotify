@@ -1,0 +1,43 @@
+---
+interface Props {
+	title: string;
+	desc: string;
+	link_txt: string;
+}
+
+const { title, desc, link_txt } = Astro.props;
+---
+
+<div>
+    <h5>{title}</h5>
+    <p>{desc}</p>
+    <a href="#">{link_txt}</a>
+</div>
+
+<style>
+    div {
+        background-color: #212121;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    a {
+        
+        color: black;
+        background-color: white;
+        border-radius: 20px;
+        padding: 10px;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    h5 {
+        font-size: 14px;
+        margin: 0;
+    }
+    p {
+        font-size: 12px;
+        margin: 20px auto;
+        display: block;
+    }
+</style>

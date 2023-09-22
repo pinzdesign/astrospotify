@@ -1,0 +1,33 @@
+---
+interface Props {
+	title: string;
+	desc: string;
+	img: string;
+}
+
+const { title, desc, img } = Astro.props;
+---
+
+<div class="playlist">
+    <img src={img} alt="playlist">
+    <h6>{title}</h6>
+    <p>{desc}</p>
+</div>
+
+<style>
+    .playlist {
+        background-color: #181818;
+        border-radius: 10px;
+        padding: 10px;
+        width: 150px;
+    }
+    h6 {
+        font-size: 16px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+    p {
+        display: inline-block;
+        font-size: 14px;
+    }
+</style>

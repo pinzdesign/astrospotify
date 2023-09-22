@@ -1,0 +1,80 @@
+---
+import PodcastSearch from '../components/PodcastSearch.astro';
+
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout hasSearch={true} title="Spotify - Forside">
+
+<h4>Spotify playlister</h4>
+<div class="playlists">
+	<PodcastSearch
+		title="Hitlister"
+        color="purple"
+        badge={true}
+	/>
+	<PodcastSearch
+        title="Podcasts"
+        color="blue"
+        badge={false}
+	/>
+	<PodcastSearch
+		title="Opdag"
+        color="green"
+        badge={false}
+	/>
+	<PodcastSearch
+        title="Hip Hop"
+        color="yellow"
+        badge={false}
+	/>
+	<PodcastSearch
+        title="Rock"
+        color="purple"
+        badge={false}
+	/>
+	<PodcastSearch
+        title="Hygge"
+        color="blue"
+        badge={false}
+	/>
+    <PodcastSearch
+		title="Hitlister"
+        color="red"
+        badge={false}
+	/>
+	<PodcastSearch
+        title="Podcasts"
+        color="blue"
+        badge={true}
+	/>
+	<PodcastSearch
+		title="Opdag"
+        color="yellow"
+        badge={false}
+	/>
+	<PodcastSearch
+        title="Hip Hop"
+        color="red"
+        badge={false}
+	/>
+	<PodcastSearch
+        title="Rock"
+        color="green"
+        badge={true}
+	/>
+	<PodcastSearch
+        title="Hygge"
+        color="red"
+        badge={true}
+	/>
+</div>
+</Layout>
+
+<style>
+	.playlists {
+		display: flex;
+		gap: 30px;
+		flex-wrap: wrap;
+	}
+</style>

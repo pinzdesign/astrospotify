@@ -1,0 +1,117 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Library from '../components/Library.astro';
+import PlaylistInfo from '../components/PlaylistInfo.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+
+interface Props {
+	title: string;
+	hasSearch: boolean;
+}
+
+const { title, hasSearch } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Spotify description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<section class="main">
+			<div class="cont_left">
+				<div class="menu">
+					<Navigation/>
+					<Library/>
+						<div class="playlist_info">
+						<PlaylistInfo 
+							title="Opret din første playliste"
+							desc="Det er nemt - vi skal nok hjælpe dig"
+							link_txt="Opret playliste"
+						/>
+						<PlaylistInfo 
+							title="Lad os finde nogle podcasts, du kan følge"
+							desc="Vi holder dig orienteret om nye episoder"
+							link_txt="Udforsk Podcasts"
+						/>
+						</div>
+						<a class="cookies" href="#">Cookies</a>
+						<a class="language" href="#"><img src="icons/globe-icon.svg" alt="globe"> Dansk</a>
+				</div>
+			</div>
+			<div class="cont_right">
+				<SiteHeader/>
+				<!-- Search should have been in SiteHeader component ideally -->
+				{hasSearch && <input type="text" class="search_field" value="Søg" />}
+				<div class="playlists_wrap">
+					<slot/>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		font-family: "Roboto", sans-serif;
+		background-color: black;
+		font-size: 16px;
+		color: white;
+		letter-spacing: 1px;
+	}
+	h4 {
+		margin: 20px auto;
+		font-size: 22px;
+	}
+	section {
+		margin: 10px;
+		display: grid;
+		gap: 30px;
+		grid-template-columns: 1fr 4fr;
+	}
+	.playlist_info {
+		height: 270px;
+		overflow: hidden;
+		overflow-y: auto;
+	}
+	.cookies {
+		font-size: 9px;
+		color: gray;
+		text-decoration: none;
+	}
+	.cookies:hover {
+		text-decoration: underline;
+	}
+	.language {
+		display: block;
+		width: fit-content;
+		border: 1px solid gray;
+		border-radius: 20px;
+		padding: 10px;
+		margin-top: 50px;
+		text-decoration: none;
+		color: white;
+		font-size: 14px;
+	}
+	.playlists_wrap {
+		padding: 30px;
+		background: rgb(0,0,0);
+		background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgb(46, 46, 46) 100%);
+	}
+	.search_field {
+		padding: 20px;
+		border-radius: 30px;
+		border: 2px solid gray;
+		margin-bottom: 20px;
+	}
+</style>

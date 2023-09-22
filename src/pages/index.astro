@@ -1,0 +1,84 @@
+---
+import Playlists from '../components/Playlists.astro';
+
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout hasSearch={false} title="Spotify - Forside">
+
+<h4>Spotify playlister</h4>
+<div class="playlists">
+	<Playlists
+		title="Today's top Hits"
+		desc="Zach Bryan & Casey"
+		img="https://picsum.photos/id/65/150/150"
+	/>
+	<Playlists
+		title="RapCaviar"
+		desc="New music from Doja"
+		img="https://picsum.photos/id/68/150/150"
+	/>
+	<Playlists
+		title="All Out 2010's"
+		desc="The biggest songs of 2010"
+		img="https://picsum.photos/id/76/150/150"
+	/>
+	<Playlists
+		title="Rock Classics"
+		desc="Rock legends & epic"
+		img="https://picsum.photos/id/240/150/150"
+	/>
+	<Playlists
+		title="Chill Hits"
+		desc="Kick back to the best"
+		img="https://picsum.photos/id/331/150/150"
+	/>
+	<Playlists
+		title="Viva Latino"
+		desc="Today's top latin beats"
+		img="https://picsum.photos/id/325/150/150"
+	/>
+</div>
+
+<h4>Fokus</h4>
+<div class="playlists">
+	<Playlists
+		title="Peaceful Piano"
+		desc="Zach Bryan & Casey"
+		img="https://picsum.photos/id/334/150/150"
+	/>
+	<Playlists
+		title="Deep Focus"
+		desc="Deepest music evar"
+		img="https://picsum.photos/id/338/150/150"
+	/>
+	<Playlists
+		title="Best of 2016's"
+		desc="The biggest songs of 2016"
+		img="https://picsum.photos/id/76/150/150"
+	/>
+	<Playlists
+		title="Pop Classics"
+		desc="Pop legends & epic"
+		img="https://picsum.photos/id/349/150/150"
+	/>
+	<Playlists
+		title="Chill Hits"
+		desc="Kick back to the best"
+		img="https://picsum.photos/id/364/150/150"
+	/>
+	<Playlists
+		title="Viva Latino"
+		desc="Today's top latin beats"
+		img="https://picsum.photos/id/325/150/150"
+	/>
+</div>
+</Layout>
+
+<style>
+	.playlists {
+		display: flex;
+		gap: 30px;
+		flex-wrap: wrap;
+	}
+</style>
